@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>To-Do Task Manager</h1>
+        <input type="text" id="taskInput" placeholder="Enter your task">
+
+        <button id="addBtn">Add Task</button>
+
+        <div class="counter">
+            <p>Total: <span id="total">0</span></p>
+            <p>Completed: <span id="completed">0</span></p>
+            <p>Remaining: <span id="remaining">0</span></p>
+        </div>
+
+        <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
