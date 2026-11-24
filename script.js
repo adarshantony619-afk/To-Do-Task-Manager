@@ -18,7 +18,8 @@ addBtn.addEventListener("click", function() {
     let task = {
         id: Date.now(),
         name: taskName,
-        completed: false
+        completed: false,
+        createdAt: new Date().toLocaleDateString()
     };
 
     tasks.push(task);
@@ -50,6 +51,9 @@ function displayTasks(filter = "all") {
 
         let span = document.createElement("span");
         span.textContent = task.name;
+
+        let date = document.createElement("small");
+        date.textContent = "Created: " + (task.createdAt || "Date not available");
 
         if (task.completed) {
             span.classList.add("completed");
@@ -84,12 +88,19 @@ function displayTasks(filter = "all") {
         deleteBtn.textContent = "Delete";
 
         deleteBtn.onclick = function() {
-            tasks = tasks.filter(t => t.id !== task.id);
-            saveTasks();
-            displayTasks(filter);
+
+            let confirmDelete = confirm(
+                "Are you sure you want to delete this task?"
+            );
+            if(confirmDelete){
+                tasks = tasks.filter(t => t.id !== task.id);
+                saveTasks();
+                displayTasks(filter);
+            }
         };
 
         li.appendChild(span);
+        li.appendChild(date);
         li.appendChild(completeBtn);
         li.appendChild(editBtn);
         li.appendChild(deleteBtn);
