@@ -49,6 +49,7 @@ function displayTasks(filter = "all") {
 
         let li = document.createElement("li");
 
+        //Date of ccreation
         let span = document.createElement("span");
         span.textContent = task.name;
 
