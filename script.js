@@ -49,10 +49,10 @@ function displayTasks(filter = "all") {
 
         let li = document.createElement("li");
 
-        //Date of ccreation
         let span = document.createElement("span");
         span.textContent = task.name;
 
+        //Date of creation(bonus feature1)
         let date = document.createElement("small");
         date.textContent = "Created: " + (task.createdAt || "Date not available");
 
@@ -89,7 +89,8 @@ function displayTasks(filter = "all") {
         deleteBtn.textContent = "Delete";
 
         deleteBtn.onclick = function() {
-
+            
+            //confirm delete(bonus feature2)
             let confirmDelete = confirm(
                 "Are you sure you want to delete this task?"
             );
