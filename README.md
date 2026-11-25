@@ -24,4 +24,7 @@ event Handling
 DOM Manipulation
 Operators
 
-
+Bonus features
+------------------------------------
+Date of creation
+confirm delete
